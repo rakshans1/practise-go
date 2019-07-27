@@ -7,7 +7,7 @@ import (
 )
 
 func helloworld() {
-	fmt.Printf("Hello World")
+	fmt.Println("Hello World")
 }
 
 func variables() {
@@ -162,6 +162,41 @@ func maps() {
 
 	n := map[string]int{"foo": 1, "bar": 2}
 	fmt.Println("map:", n)
+
+	colors := map[string]string{
+		"red":   "#ff0000",
+		"white": "#ffffff",
+		"grey":  "#cccccc",
+	}
+	fmt.Println(colors)
+	delete(colors, "grey")
+	for c, h := range colors {
+		fmt.Println(c, h)
+	}
+}
+
+func structs() {
+	type contactInfo struct {
+		zipcode int
+		email   string
+	}
+
+	type person struct {
+		firstName string
+		lastName  string
+		contact   contactInfo
+	}
+
+	alex := person{
+		firstName: "Rakshan",
+		lastName:  "Shetty",
+		contact: contactInfo{
+			zipcode: 421201,
+			email:   "shettyraxx555@gmail.com",
+		},
+	}
+	fmt.Printf("%+v", alex)
+	fmt.Println("")
 }
 
 func main() {
@@ -174,4 +209,6 @@ func main() {
 	array()
 	slices()
 	maps()
+	structs()
+	interfaces()
 }
