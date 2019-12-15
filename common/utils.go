@@ -16,6 +16,18 @@ func Max(nums ...int) int {
 	return max
 }
 
+func Min(nums ...int) int {
+	min := nums[0]
+
+	for _, num := range nums {
+		if min > num {
+			min = num
+		}
+	}
+
+	return min
+}
+
 func Equal(t *testing.T, expected, result interface{}) {
 	if !reflect.DeepEqual(result, expected) {
 		t.Errorf("should be %v instead of %v", expected, result)
