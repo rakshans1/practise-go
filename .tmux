@@ -9,6 +9,5 @@ fi
 
 tmux new-session -d -s practise-go -n editor
 tmux send-keys -t practise-go:editor "v " Enter
-tmux split-window -t practise-go:editor -h
-tmux resize-pane -t practise-go:1.2 -R 50
+tmux split-window -t practise-go:editor -h -p 10
 tmux attach -t practise-go:editor.top

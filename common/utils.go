@@ -33,3 +33,11 @@ func Equal(t *testing.T, expected, result interface{}) {
 		t.Errorf("should be %v instead of %v", expected, result)
 	}
 }
+
+func ChanToSlice(ch chan int) []int {
+	out := []int{}
+	for v := range ch {
+		out = append(out, v)
+	}
+	return out
+}
