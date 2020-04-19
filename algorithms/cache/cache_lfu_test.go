@@ -21,4 +21,13 @@ func TestCacheLFU(t *testing.T) {
 			t.Fatalf("Cache Value %v; want %v", v, 1)
 		}
 	})
+
+	t.Run("Should increment cache freq on repeate access", func(t *testing.T) {
+		c := New()
+		c.Set("a", 1)
+		v := c.Get("a")
+		if v != 1 {
+			t.Fatalf("Cache Value %v; want %v", v, 1)
+		}
+	})
 }
